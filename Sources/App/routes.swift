@@ -16,7 +16,7 @@ public func routes(_ router: Router) throws {
     // Example of configuring a controller
     let taskController = TasksController()
     router.get("allTasks") { req in
-           return "[{ \"identifier\": 1234, \"details\": [ \"asdas-qweqw\", \"asdas-qwegg\", \"klkkf-dddd\" ] }, { \"identifier\": \"1234\", \"details\": [ \"asdas-qweqw\", \"asdas-qwegg\", \";klkkf-dddd\" ] }]"
+           return "\"items\": [{ \"identifier\": 1234, \"details\": [ \"asdas-qweqw\", \"asdas-qwegg\", \"klkkf-dddd\" ] }, { \"identifier\": \"1234\", \"details\": [ \"asdas-qweqw\", \"asdas-qwegg\", \";klkkf-dddd\"] }]"
     }
     router.post("task", String.parameter, use: taskController.create)
     router.delete("todos", Beacon.parameter, use: taskController.delete)
